@@ -16,7 +16,7 @@ import org.junit.Test;
 import email.EnvioEmail;
 
 public class AppTest {
-
+	
 	private String userName ="seu-melhor-email@gmail.com";
 	private String password = "nao-vou-revelar-a-senha";
 
@@ -65,12 +65,12 @@ public class AppTest {
 		);
 		
 		envioEmail.enviarEmail(false);
-	}
+	}	
 	
 	@Test
 	public void testeEmailComObjetoHTML() {
 		
-		String remetente = "Alex";
+		String remetente = "Wendel";
 		
 		StringBuilder html = new StringBuilder();
 		
@@ -92,13 +92,14 @@ public class AppTest {
 		html.append("<span style=\"font-size: 10px;\">Ass: CobraDev Cursos Tecnológicos</span>");
 		
 		EnvioEmail envioEmail = new EnvioEmail(
-			"tadeupalermoti@gmail.com,alex.fernando.egidio@gmail.com", 
+			"tadeupalermoti@gmail.com,alex.fernando.egidio@gmail.com,wendelsegadilha99@gmail.com", 
 			"Tadeu Espindola Palermo", 
 			"Chegou e-mail enviado com Java pelo Tadeu - Com objeto de envio!", 
 			html.toString()
 		);
 		
-		envioEmail.enviarEmail(true);
+		//envioEmail.enviarEmail(true);
+		envioEmail.enviarEmailComAnexo(true);
 	}
 	
 }
